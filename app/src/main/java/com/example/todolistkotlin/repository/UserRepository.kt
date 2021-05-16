@@ -1,6 +1,8 @@
-package com.example.todolistkotlin.data
+package com.example.todolistkotlin.repository
 
 import androidx.lifecycle.LiveData
+import com.example.todolistkotlin.data.UserDao
+import com.example.todolistkotlin.model.User
 
 class UserRepository(private val userDao: UserDao) {
 
@@ -8,6 +10,10 @@ class UserRepository(private val userDao: UserDao) {
 
     suspend fun addUser(user : User){
         userDao.addUser(user)
+    }
+
+    suspend fun updateUser(user: User){
+        userDao.updateUser(user)
     }
 
 
